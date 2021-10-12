@@ -31,7 +31,7 @@ const SearchPage = ()=>{
                 image={"https://i.ytimg.com/an_webp/WRS705LZbzw/mqdefault_6s.webp?du=3000&sqp=CLjykIsG&rs=AOn4CLBNTN46LcSmWYo7LASJewd2CiXPvg"}
             />
             <VideoRow
-                views={21,621,532 }
+                views={"21,62,1532" }
                 subs={"6M"}
                 description={"RAMTA JOGI | AR Rahman | Iman Esmail Choreography | Bollywood Dance by Iman Esmail"}
                 timestamp={"1 year ago"}
@@ -40,7 +40,7 @@ const SearchPage = ()=>{
                 image={"https://i.ytimg.com/an_webp/9Bt2F6pbiag/mqdefault_6s.webp?du=3000&sqp=CPj-kIsG&rs=AOn4CLDa7a56bEkvLx9s1IPXRitJftN3SQ"}
             />
             <VideoRow
-                views={55,670}
+                views={"55,670"}
                 subs={"5M"}
                 description={"Why YouTube Terminated Channel? | YouTube Channel Suspended Kyu Hota Hai | Sunday Comment Box#182"}
                 timestamp={"1 day ago"}
