@@ -1,10 +1,15 @@
-import Navbar from "../components/Navbar";
+import { Navbar, Sidebar } from "../components";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
-    </div>
+      <div className="flex h-full">
+        <div className="flex-[0.3]">
+          <Sidebar />
+        </div>
+      </div>
+    </>
   )
 }
 
