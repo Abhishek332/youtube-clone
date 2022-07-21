@@ -5,7 +5,7 @@ const Home = () => {
     <>
       <Navbar />
       <div className="flex h-full w-full">
-        <div className="flex-[0.18]">
+        <div className="lg:w-44">
           <Sidebar />
         </div>
       </div>
