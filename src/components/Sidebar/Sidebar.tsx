@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SideItem from './SideItem';
 import { HomeIcon, ExploreOutlinedIcon, SubscriptionsOutlinedIcon, VideoLibraryOutlinedIcon, HistoryOutlinedIcon, OndemandVideoOutlinedIcon, WatchLaterOutlinedIcon, ExpandMoreOutlinedIcon } from '../../icons';
-import { SideItemTypes } from '../../types';
+import type { SideItemTypes } from '../../types';
 
 const Sidebar = () => {
   const [selected, setSelected] = useState<string>('home');
