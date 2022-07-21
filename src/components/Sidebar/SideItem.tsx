@@ -1,22 +1,17 @@
-import { OverridableComponent } from '@mui/material/OverridableComponent';
-import { SvgIconTypeMap } from '@mui/material/SvgIcon/SvgIcon';
-import React from 'react'
+import React from 'react';
+import { SideItemTypes } from '../../types';
 
-const SideItem: React.FC<SideItemProps> = ({ Icon, heading, link }) => {
+const SideItem: React.FC<SideItemProps> = ({ Icon, heading, link, selected }) => {
   return (
-    <div className="flex">
-      <Icon />
-      <p>{heading}</p>
+    <div className={`flex py-3 items-center hover:font-medium ${selected ? 'bg-gray-200 font-medium' : ' hover:bg-gray-100'} cursor-pointer`} onClick={() => { }}>
+      <Icon className="mx-5" />
+      <p className="font-roboto hidden lg:block first-letter:capitalize text-sm">{heading}</p>
     </div>
   )
 }
 
 export default SideItem
 
-interface SideItemProps {
-  Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
-    muiName: string;
-  };
-  heading: string;
-  link?: string;
+interface SideItemProps extends SideItemTypes {
+  selected?: boolean;
 }
