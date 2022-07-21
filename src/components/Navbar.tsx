@@ -1,12 +1,11 @@
 import { MenuIcon, SearchIcon, MicIcon, VideoCallOutlinedIcon, NotificationsOutlinedIcon, Avatar } from '../icons';
 import { Link } from 'react-router-dom';
-// import MenuIcon from '@mui/icons-material/Menu';
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ active, setActive }) => {
     return (
         <div className="h-14 px-5 w-full bg-white flex items-center justify-between sticky t-0 l-0">
             <div className="flex items-center h-full">
-                <MenuIcon className="cursor-pointer" />
+                <MenuIcon className="cursor-pointer" onClick={() => setActive(!active)} />
                 <div className="h-full relative w-32 flex items-center">
                     <img src="https://www.citypng.com/public/uploads/preview/-516095138081bnlgvzegi.png" alt="" className="h-[80%] absolute" />
                 </div>
@@ -32,3 +31,8 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+interface NavbarProps {
+    active: boolean;
+    setActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
