@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import SideItem from './SideItem';
 import { HomeIcon, ExploreOutlinedIcon, SubscriptionsOutlinedIcon, VideoLibraryOutlinedIcon, HistoryOutlinedIcon, OndemandVideoOutlinedIcon, WatchLaterOutlinedIcon, ExpandMoreOutlinedIcon } from '../../icons';
 import type { SideItemTypes } from '../../types';
 
-const Sidebar = () => {
+const Sidebar: React.FC<SidebarProps> = ({ setActive }) => {
   const [selected, setSelected] = useState<string>('home');
 
   const Items: SideItemTypes[] = [
@@ -41,15 +41,25 @@ const Sidebar = () => {
     }
   ],
     handleClick = (e: any) => {
-      const { innerText } = e.target as HTMLElement;
-      setSelected(innerText.toLowerCase());
+      const target = e.target as HTMLElement;
+      if (target.innerText) {
+        setSelected(target.innerText.toLowerCase());
+        setActive(false);
+        return;
+      }
+      setSelected(target.id.toLowerCase());
+      setActive(false);
     }
 
   return (
-    <div className="w-full h-full" onClick={handleClick}>
+    <div className="w-full h-full bg-white" onClick={handleClick}>
       {Items.map((item, index) => <SideItem {...item} selected={selected === item.heading} key={item.heading + index} />)}
     </div>
   )
 }
 
 export default Sidebar
+
+interface SidebarProps {
+  setActive: Dispatch<SetStateAction<boolean>>;
+}

@@ -7,12 +7,9 @@ const Home = () => {
   return (
     <div className="h-full w-full">
       <Navbar active={active} setActive={setActive} />
-      <div className="flex h-full w-full relative">
-        <div className={`absolute h-full w-full bg-zinc-900 opacity-60 z-20 ${active ? 'block' : 'hidden'}`}>
-
-        </div>
-        <div className={`lg:w-56 ${!active && 'lg:w-[4.3725rem]'} overflow-hidden duration-300`}>
-          <Sidebar />
+      <div className="flex h-[calc(100vh-56px)] w-full relative scroll overflow-hidden">
+        <div className={`h-full absolute left-0 lg:relative z-20 w-56 ${!active && 'w-[0rem] lg:w-[4.3725rem]'} border-2 overflow-hidden duration-300`}>
+          <Sidebar setActive={setActive} />
         </div>
         <VideoSection />
       </div>
