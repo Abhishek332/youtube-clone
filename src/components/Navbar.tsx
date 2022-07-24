@@ -19,14 +19,13 @@ const Navbar: React.FC<NavbarProps> = ({ active, setActive }) => {
                 </div>
             </div>
             <div className="flex items-center">
-                <SearchIcon className="lg:hidden" />
-                {
-                    window.innerWidth > 540 && <>
-                        <VideoCallOutlinedIcon className="mx-2 cursor-pointer" />
-                        <NotificationsOutlinedIcon className="mx-2 cursor-pointer" />
-                    </>
-                }
-
+                <div className="lg:hidden">
+                    <SearchIcon className=" cursor-pointer" />
+                </div>
+                <div className="hidden lg:flex">
+                    <VideoCallOutlinedIcon className="mx-2 cursor-pointer" />
+                    <NotificationsOutlinedIcon className="mx-2 cursor-pointer" />
+                </div>
                 <Avatar className="mx-2 cursor-pointer h-[85%]" />
             </div>
         </div>
